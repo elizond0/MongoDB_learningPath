@@ -45,5 +45,6 @@ db.removeUser("userName")   删除用户
 
 [更多点击查看](https://blog.csdn.net/piaocoder/article/details/52384756)
 
-
-
+## 3.js文件写mongo命令
+创建03.js文件,使用var,mongoDB对es6支持程度不够
+$ mongo 03.js
