@@ -19,23 +19,23 @@ MongoDB是非关系型数据库,非关系数据库和关系型数据库的区别
 ## 2.Mongo基本命令
 
 1. 数据库常用命令:
-help                    查看命令提示
-use yourDB              切换/创建数据库,当创建一个集合(table)的时候会自动创建当前数据库
-show dbs                查询所有数据库
-db.dropDatabase()       删除当前使用数据库
-db.version()            查看数据库版本
-db.cloneDatabase("127.0.0.1")   从指定主机上克隆数据库
-db.copyDatabase("mydb", "temp", "127.0.0.1");   从指定的机器上复制指定数据库数据到某个数据库,将本机的mydb的数据复制到temp数据库中
-db.repairDatabase()     修复当前数据库
-db/db.getName()         查看当前使用的数据库
-db.stats()              显示当前db状态
-db.getMongo()           查看当前db的链接机器地址
+help                    查看命令提示  
+use yourDB              切换/创建数据库,当创建一个集合(table)的时候会自动创建当前数据库  
+show dbs                查询所有数据库  
+db.dropDatabase()       删除当前使用数据库  
+db.version()            查看数据库版本  
+db.cloneDatabase("127.0.0.1")   从指定主机上克隆数据库  
+db.copyDatabase("mydb", "temp", "127.0.0.1");   从指定的机器上复制指定数据库数据到某个数据库,将本机的mydb的数据复制到temp数据库中  
+db.repairDatabase()     修复当前数据库  
+db/db.getName()         查看当前使用的数据库  
+db.stats()              显示当前db状态  
+db.getMongo()           查看当前db的链接机器地址  
 
 2. Collection聚集集合:
-db.createCollection(“collName”, {size: 20, capped: 5, max: 100})    创建一个聚集集合（table),创建成功会显示{“ok”:1},判断集合是否为定容量db.collName.isCapped()
-db.getCollection("account") 得到指定名称的聚集集合（table）
-db.getCollectionNames() 得到当前db的所有聚集集合
-db.printCollectionStats()   显示当前db所有聚集索引的状态
+db.createCollection(“collName”, {size: 20, capped: 5, max: 100})    创建一个聚集集合（table),创建成功会显示{“ok”:1},判断集合是否为定容量db.collName.isCapped()  
+db.getCollection("account") 得到指定名称的聚集集合（table）  
+db.getCollectionNames() 得到当前db的所有聚集集合  
+db.printCollectionStats()   显示当前db所有聚集索引的状态  
 
 3. 用户相关
 db.addUser("userName", "pwd123", true)  添加一个用户(用户名,密码,是否只读)
@@ -43,8 +43,12 @@ db.auth("userName", "123123")  数据库认证、安全模式
 show users              显示当前所有用户
 db.removeUser("userName")   删除用户
 
-[更多点击查看](https://blog.csdn.net/piaocoder/article/details/52384756)
+[更多命令点击查看](https://blog.csdn.net/piaocoder/article/details/52384756)
 
 ## 3.js文件写mongo命令
 创建03.js文件,使用var,mongoDB对es6支持程度不够
 $ mongo 03.js
+
+## 4.批量插入
+db.test.insert({'num': 1})
+循环插入性能较慢,应该先将数据储存为数组,然后再批量插入
