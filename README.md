@@ -92,3 +92,9 @@
 4. new:[boolean]返回更新前的文档还是更新后的文档。
 5. fields：需要返回的字段
 6. upsert：没有这个值是否增加
+
+## 7.查询：find的不等修饰符
+
+* 简单查找：db.workmate.find({"skill.skillOne":"HTML+CSS"})
+* 筛选字段:db.workmate.find({name:1,"skill.skillOne":1})
+* 不等修饰符:$lt,$lte,$gt,$gte,$ne(not equal不等于)
