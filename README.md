@@ -180,3 +180,9 @@
 * 鉴权,需要重启服务使设置生效:db.auth("hector","123456")(如果正确返回1，如果错误返回0。)
 * 启动数据库 $ mongod --auth
 * 连接数据库 $ mongo -u hector -p 123456 127.0.0.1:27017/admin
+
+## 15.管理：备份和还原
+
+* 数据备份 $ mongodump --host 127.0.0.1 --port 27017 --out E:/mongoDB/backup --collection randomInfo --db company --username ****** --password ******
+
+* 数据恢复 $ mongorestore --host 127.0.0.1 --port 27017 E:/mongoDB/backup --username ****** --password ******
