@@ -160,3 +160,23 @@
 1. 默认规则: 空格间隔两条查询关键字  满足任一条件即显示
 2. 关键字前使用 "-" 屏蔽关键字
 3. 使用' \" '转义符 精确查找2个以空格间隔的单词
+
+## 14.管理:用户的创建、删除与修改
+
+* 安装MongoDB时，默认开了一个最高管理权限方便管理数据库，可以用mongo链接数据库。但在实际开发中一般并不能使用这个用户，因为大家都知道和最高权限的原因，安全性和可靠性都不适合，所以要对MongoDB的用户进行管理。
+
+* 内置角色(权限):
+1. 数据库用户角色：read、readWrite；
+2. 数据库管理角色：dbAdmin、dbOwner、userAdmin;
+3. 集群管理角色：clusterAdmin、clusterManager、clusterMonitor、hostManage；
+4. 备份恢复角色：backup、restore；
+5. 所有数据库角色：readAnyDatabase、readWriteAnyDatabase、userAdminAnyDatabase、dbAdminAnyDatabase
+6. 超级用户角色：root
+7. 内部角色：__system
+
+* 创建用户(角色):db.create({user:"hector",pwd:"123456",roles:[]})
+* 查看用户(角色):db.system.users.find()
+* 删除用户(角色):db.system.users.remove({user:"hector"})
+* 鉴权,需要重启服务使设置生效:db.auth("hector","123456")(如果正确返回1，如果错误返回0。)
+* 启动数据库 $ mongod --auth
+* 连接数据库 $ mongo -u hector -p 123456 127.0.0.1:27017/admin
