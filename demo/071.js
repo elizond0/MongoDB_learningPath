@@ -6,7 +6,7 @@
 // )
 
 // db.workmate.find(
-//     {age:{$lte:30,$gte:25}},//年龄集合[25,30]岁之间
+//     {age:{$lte:30,$gte:25}},//年龄集合25~30岁之间
 //     {name:true,age:true,age:true,_id:false}
 // )
 

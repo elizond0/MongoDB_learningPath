@@ -52,8 +52,8 @@
 
 ## 3.js文件写mongo命令
 
-* 创建03.js文件,使用var,mongoDB对es6支持程度不够
-* $ mongo 03.js
+* 创建030.js文件,使用var,mongoDB对es6支持程度不够
+* $ mongo 030.js
 
 ## 4.批量插入
 
@@ -65,7 +65,7 @@
 * 普通的update方法,较为繁琐(051.js):
 1. $ mongod 打开数据库
 2. $ mongo 连接数据库 ; db.runCommand({ping:1})可用于检测是否成功连接数据库
-3. $ load('./demo/05.js');在mongo下执行js批量插入数据
+3. $ load('./demo/050.js');在mongo下执行js批量插入数据
 4. $ load('./demo/051.js');执行update操作
 
 * update修改器(052.js):
@@ -98,3 +98,13 @@
 * 简单查找：db.workmate.find({"skill.skillOne":"HTML+CSS"})
 * 筛选字段:db.workmate.find({name:1,"skill.skillOne":1})
 * 不等修饰符:$lt,$lte,$gt,$gte,$ne(not equal不等于)
+
+## 8.查询：find的多条件查询
+
+* $in 一个key匹配多value 复制到mongo命令行内执行
+* $nin 显示不匹配的
+* $or 或 - 符合条件之一的
+* $and 与 - 同时满足条件的
+* $nor 都不 - 同时不满足条件的
+* $not 匹配除了条件以外的
+

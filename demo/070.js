@@ -1,5 +1,5 @@
 var workmate1 = {
-    name: 'JSPang',
+    name: 'PangGe',
     age: 33,
     sex: 1,
     job: '前端',
